@@ -8,7 +8,7 @@
         private $xml;
         private $mainNode; //Nó responsável por ser o principal para ser realizado as operações do CRUD
 
-        private $path = "database/";
+        private $path = __DIR__."/../database/";
 
         public function __construct($filename, $mainNode){
             $this->filename = $filename;
