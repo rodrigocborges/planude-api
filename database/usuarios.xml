@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <usuarios>
-    <usuario id="1">
-        <tipoPerfil>0</tipoPerfil>
-        <email>teste@t.com</email>
-        <senha>123</senha>
-    </usuario>
-    <usuario id="2">
-        <tipoPerfil>1</tipoPerfil>
-        <email>x@t.com</email>
-        <senha>222</senha>
-    </usuario>
+  <usuario id="1">
+    <tipoPerfil>0</tipoPerfil>
+    <email>admin@email.com</email>
+    <senha>123abc!</senha>
+  </usuario>
+  <usuario id="2">
+    <tipoPerfil>1</tipoPerfil>
+    <email>medico@email.com</email>
+    <senha>123abc!</senha>
+  </usuario>
+  <usuario id="3">
+    <tipoPerfil>2</tipoPerfil>
+    <email>lab@email.com</email>
+    <senha>123abc!</senha>
+  </usuario>
+  <usuario id="4">
+    <tipoPerfil>3</tipoPerfil>
+    <email>paciente@email.com</email>
+    <senha>123abc!</senha>
+  </usuario>
 </usuarios>

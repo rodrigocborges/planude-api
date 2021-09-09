@@ -11,11 +11,13 @@
             try {                
                 $this->info = $info;
                 
-                if(!isset($_COOKIE["accessToken"])){
-                    $jwt = $this->JWT();
-                    setcookie("accessToken", $jwt, ( time() + intval($GLOBALS["tokenExpirationTime"]) ), '/');
-                    return $jwt;
+                if(isset($_COOKIE["accessToken"])){
+                    unset($_COOKIE["accessToken"]);
                 }
+
+                $jwt = $this->JWT();
+                setcookie("accessToken", $jwt, ( time() + intval($GLOBALS["tokenExpirationTime"]) ), '/');
+                return $jwt;
 
                 return $_COOKIE["accessToken"];
             }

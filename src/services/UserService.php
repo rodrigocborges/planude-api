@@ -29,30 +29,25 @@
                     return array("message" => "Empty password");
                 }else{
                     $allUsers = json_decode($this->xml->ShowJson(), true);
-                    $currentEmail = "";
-                    $currentPassword = "";
-                    $currentTipoPerfil = "";
+                    $currentEmail = null;
+                    $currentPassword = null;
+                    $currentTipoPerfil = null;
 
-                    foreach($allUsers["usuario"] as $val){
-                        if($val["email"] == trim($email)){
-                            $currentEmail = $val["email"];
-                            $currentTipoPerfil = $val["tipoPerfil"];
-                        }
-                        if($val["senha"] == trim($password)){
-                            $currentPassword = $val["senha"];
-                            $currentTipoPerfil = $val["tipoPerfil"];
+                    $keyUser = array_search($email, array_column($allUsers["usuario"], "email"));
+                    
+                    if($keyUser >= 0){
+                        $currentEmail = ($allUsers["usuario"][$keyUser]["email"] == $email) ? $email : null;
+                        $currentPassword = ($allUsers["usuario"][$keyUser]["senha"] == $password) ? $password : null;
+                        $currentTipoPerfil = ($allUsers["usuario"][$keyUser]["tipoPerfil"] != null && $currentEmail != null && $currentPassword != null) ? $allUsers["usuario"][$keyUser]["tipoPerfil"] : null;
+                        if($currentEmail != null && $currentPassword != null && $currentTipoPerfil != null){
+                            $tokenService = new TokenService();
+                            $token = $tokenService->GetToken(["email" => $currentEmail, "tipoPerfil" => $currentTipoPerfil]);
+    
+                            return array("token" => $token);
                         }
                     }
 
-                    if(empty($currentEmail) || empty($currentPassword)){
-                        return array("message" => "Wrong user");
-                    }else{
-
-                        $tokenService = new TokenService();
-                        $token = $tokenService->GetToken(["email" => $currentEmail, "tipoPerfil" => $currentTipoPerfil]);
-
-                        return array("token" => $token);
-                    }
+                    return array("message" => "Wrong user");
                 }
             }
             catch(Exception $e){
