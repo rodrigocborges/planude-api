@@ -111,9 +111,9 @@
 
                 $element = $this->mainNode;         
                 $array = array();
-
-                foreach($this->xml->$element as $key => $val){
-                    $array[$key] = $val;
+                
+                foreach($this->xml->$element as $val){
+                    $array[] = $val;
                 }
 
                 return $array;
@@ -127,7 +127,7 @@
         public function ShowJson(){
             try {
                 $json = json_encode($this->xml);
-                echo $json;
+                return $json;
             }
             catch(Exception $e){
                 die($e->getMessage());

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<usuarios>
+    <usuario id="1">
+        <tipoPerfil>0</tipoPerfil>
+        <email>teste@t.com</email>
+        <senha>123</senha>
+    </usuario>
+    <usuario id="2">
+        <tipoPerfil>1</tipoPerfil>
+        <email>x@t.com</email>
+        <senha>222</senha>
+    </usuario>
+</usuarios>
