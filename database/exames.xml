@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exames>
+  <exame id="1">
+    <nomePaciente>Paciente AB</nomePaciente>
+    <tipo>Hemograma</tipo>
+    <resultado>Tudo ok!</resultado>
+    <data>24/09/2021</data>
+  </exame>
+</exames>

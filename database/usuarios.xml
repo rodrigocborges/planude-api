@@ -4,20 +4,38 @@
     <tipoPerfil>0</tipoPerfil>
     <email>admin@email.com</email>
     <senha>123abc!</senha>
+    <nome>Admin</nome>
+    <telefone>53999990102</telefone>
+    <endereco>Rua legal, 322</endereco>
   </usuario>
   <usuario id="2">
     <tipoPerfil>1</tipoPerfil>
     <email>medico@email.com</email>
     <senha>123abc!</senha>
+    <nome>Medico</nome>
+    <telefone>53229990102</telefone>
+    <endereco>Rua abc, 111</endereco>
+    <crm>55001-22</crm>
   </usuario>
   <usuario id="3">
     <tipoPerfil>2</tipoPerfil>
     <email>lab@email.com</email>
     <senha>123abc!</senha>
+    <nome>Laboratorio</nome>
+    <telefone>53119990102</telefone>
+    <endereco>Rua dcx, 222</endereco>
+    <exames>Hemograma, fertilidade</exames>
+    <cnpj>86.966.714/0001-74</cnpj>
   </usuario>
   <usuario id="4">
     <tipoPerfil>3</tipoPerfil>
     <email>paciente@email.com</email>
     <senha>123abc!</senha>
+    <nome>Paciente</nome>
+    <telefone>53889990102</telefone>
+    <endereco>Rua xyz, 1024</endereco>
+    <genero>Masculino</genero>
+    <idade>22</idade>
+    <cpf>081.824.900-57</cpf>
   </usuario>
 </usuarios>

@@ -71,6 +71,7 @@
             }
         }
 
+        //Edita registros baseados em um ID
         public function UpdateData($data){
             try {
                 if($this->xml == null){
@@ -103,6 +104,7 @@
             }
         }
 
+        //Carrega todos os registros em um vetor bruto
         public function LoadAll(){
             try {
                 if($this->xml == null){
@@ -124,6 +126,7 @@
             }
         }
 
+        //Carrega todos os elementos e retorna um JSON para converter após para um vetor
         public function ShowJson(){
             try {
                 $json = json_encode($this->xml);

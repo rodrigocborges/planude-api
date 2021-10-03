@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<medicos>
-    <medico id="3">
-        <nome>Bill Gates</nome>
-        <idade>22</idade>
-        <crm>33001</crm>
-    </medico>
-</medicos>
