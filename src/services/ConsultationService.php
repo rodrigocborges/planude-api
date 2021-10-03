@@ -12,6 +12,10 @@
             try {
                 $data["id"] = md5(uniqid(rand(), true)); //id único
 
+                if(empty($data["observacao"]) || $data["observacao"] == null || count($data["observacao"]) == 0){
+                    $data["observacao"] = "";
+                }
+
                 $this->xml->AddData($data, $data["usuarioid"]);
 
                 return array('message' => 'Consulta cadastrada com sucesso!');
@@ -49,7 +53,7 @@
                 $data = array();
                 foreach ($this->xml->LoadAll() as $consultation) {
                     if ((string)$consultation['usuarioid'] == (string)$uid) {
-                        array_push($data, $consultation);
+                        $data[] = $consultation;
                     }
                 }
                 return $data;

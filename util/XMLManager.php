@@ -62,7 +62,7 @@
 
                 foreach($data as $key => $v)
                 {
-                    if($key != "id"){
+                    if($key != "id" || $key != "usuarioid"){
                         $aux->addChild($key, $v);
                     }
                 }

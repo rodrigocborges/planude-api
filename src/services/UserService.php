@@ -32,6 +32,7 @@
                     $currentEmail = null;
                     $currentPassword = null;
                     $currentTipoPerfil = null;
+                    $currentID = null;
 
                     $keyUser = array_search($email, array_column($allUsers["usuario"], "email"));
                     
@@ -39,9 +40,10 @@
                         $currentEmail = ($allUsers["usuario"][$keyUser]["email"] == $email) ? $email : null;
                         $currentPassword = ($allUsers["usuario"][$keyUser]["senha"] == $password) ? $password : null;
                         $currentTipoPerfil = ($allUsers["usuario"][$keyUser]["tipoPerfil"] != null && $currentEmail != null && $currentPassword != null) ? $allUsers["usuario"][$keyUser]["tipoPerfil"] : null;
-                        if($currentEmail != null && $currentPassword != null && $currentTipoPerfil != null){
+                        $currentID  = ($allUsers["usuario"][$keyUser]["@attributes"]["id"] != null && $currentEmail != null && $currentPassword != null) ? $allUsers["usuario"][$keyUser]["@attributes"]["id"] : null;
+                        if($currentEmail != null && $currentPassword != null && $currentTipoPerfil != null && $currentID != null){
                             $tokenService = new TokenService();
-                            $token = $tokenService->GetToken(["email" => $currentEmail, "tipoPerfil" => $currentTipoPerfil]);
+                            $token = $tokenService->GetToken(["id" => $currentID, "email" => $currentEmail, "tipoPerfil" => $currentTipoPerfil]);
     
                             return array("token" => $token);
                         }

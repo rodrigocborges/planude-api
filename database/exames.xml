@@ -4,6 +4,6 @@
     <nomePaciente>Paciente AB</nomePaciente>
     <tipo>Hemograma</tipo>
     <resultado>Tudo ok!</resultado>
-    <data>24/09/2021</data>
+    <data>24-09-2021</data>
   </exame>
 </exames>
