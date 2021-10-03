@@ -12,7 +12,7 @@
             try {
                 $data["id"] = md5(uniqid(rand(), true)); //id único
 
-                $this->xml->AddData($data);
+                $this->xml->AddData($data, $data["usuarioid"]);
 
                 return array('message' => 'Consulta cadastrada com sucesso!');
             }
@@ -32,12 +32,27 @@
 
         public function GetByID($id){
             try {
-                foreach ($this->xml->LoadAll() as $exame) {
-                    if ((string)$exame['id'] == (string)$id) {
-                        return $exame;
+                foreach ($this->xml->LoadAll() as $consultation) {
+                    if ((string)$consultation['id'] == (string)$id) {
+                        return $consultation;
                     }
                 }
                 return array();
+            }
+            catch(Exception $e){
+                return array('message' => $e->getMessage());
+            }
+        }
+
+        public function GetByUserID($uid){
+            try {
+                $data = array();
+                foreach ($this->xml->LoadAll() as $consultation) {
+                    if ((string)$consultation['usuarioid'] == (string)$uid) {
+                        array_push($data, $consultation);
+                    }
+                }
+                return $data;
             }
             catch(Exception $e){
                 return array('message' => $e->getMessage());

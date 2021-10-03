@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <consultas>
-  <consulta id="1">
+  <consulta id="1" usuarioid="4">
     <receita>Dorflex, 1 vez ao dia</receita>
     <observacao>Paciente está no geral bem, mas anda com dores musculares</observacao>
     <data>20/09/2021</data>

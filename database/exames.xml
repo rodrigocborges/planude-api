@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <exames>
-  <exame id="1">
+  <exame id="1" usuarioid="4">
     <nomePaciente>Paciente AB</nomePaciente>
     <tipo>Hemograma</tipo>
     <resultado>Tudo ok!</resultado>

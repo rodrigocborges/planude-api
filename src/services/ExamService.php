@@ -12,7 +12,7 @@
             try {
                 $data["id"] = md5(uniqid(rand(), true)); //id único
 
-                $this->xml->AddData($data);
+                $this->xml->AddData($data, $data["usuarioid"]);
 
                 return array('message' => 'Exame cadastrado com sucesso!');
             }
@@ -38,6 +38,21 @@
                     }
                 }
                 return array();
+            }
+            catch(Exception $e){
+                return array('message' => $e->getMessage());
+            }
+        }
+
+        public function GetByUserID($uid){
+            try {
+                $data = array();
+                foreach ($this->xml->LoadAll() as $exame) {
+                    if ((string)$exame['usuarioid'] == (string)$uid) {
+                        array_push($data, $exame);
+                    }
+                }
+                return $data;
             }
             catch(Exception $e){
                 return array('message' => $e->getMessage());

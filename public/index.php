@@ -89,6 +89,11 @@
         echo json_encode($examService->GetByID($params["id"]));
     });
 
+    router('GET', '^/exams/user/(?<id>\w+)$', function($params) {
+        $examService = new ExamService();
+        echo json_encode($examService->GetByUserID($params["id"]));
+    });
+
     router('GET', '^/exams$', function($params) {
         $examService = new ExamService();
         echo $examService->GetAll();
@@ -114,7 +119,12 @@
     //Consultas (usado por paciente e médico)
     router('GET', '^/consultations/(?<id>\w+)$', function($params) {
         $consultationService = new ConsultationService();
-        echo json_encode($examService->GetByID($params["id"]));
+        echo json_encode($consultationService->GetByID($params["id"]));
+    });
+
+    router('GET', '^/consultations/user/(?<id>\w+)$', function($params) {
+        $consultationService = new ConsultationService();
+        echo json_encode($consultationService->GetByUserID($params["id"]));
     });
 
     router('GET', '^/consultations$', function($params) {

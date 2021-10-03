@@ -47,7 +47,7 @@
         }
 
         //Adiciona registros em uma determinada tag
-        public function AddData($data){
+        public function AddData($data, $usuarioID = null){
             try {
                 if($this->xml == null){
                     throw new Exception("Arquivo XML não carregado");
@@ -55,6 +55,10 @@
                 $element = $this->mainNode;
                 $aux = $this->xml->addChild($element, "");
                 $aux->addAttribute("id", $data["id"]);
+
+                if($usuarioID != null){
+                    $aux->addAttribute("usuarioid", $usuarioID);
+                }
 
                 foreach($data as $key => $v)
                 {
